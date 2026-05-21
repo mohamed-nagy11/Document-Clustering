@@ -50,14 +50,6 @@ pip install -r requirements.txt
 ```
 
 
-4. **Download the required spaCy language model:**
-```bash
-python -m spacy download en_core_web_sm
-
-```
-
-
-
 ## Usage
 
 The pipeline is executed via the `src/train.py` script. It accepts command-line arguments to dictate which dataset, model, and vectorizer to use for a given run.
