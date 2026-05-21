@@ -21,3 +21,16 @@ TFIDF_MAX_DF = 0.7
 NEWSGROUPS_MIN_WORDS = 25
 WIKI_MAX_WORDS_PERCENTILE = 99
 NEWSGROUPS_MAX_WORDS_PERCENTILE = 99
+
+# Model Hyperparameters for Each Dataset
+WIKI_PARAMS = {
+    'kmeans': {'k': 20},
+    'gmm': {'k': 20, 'covariance_type': 'full'},
+    'hierarchical': {'k': 20, 'metric': 'cosine', 'linkage': 'complete'}
+}
+
+NEWSGROUPS_PARAMS = {
+    'kmeans': {'k': 20},
+    'gmm': {'k': 20, 'covariance_type': 'tied'},
+    'hierarchical': {'k': 20, 'metric': 'cosine', 'linkage': 'average'}
+}
