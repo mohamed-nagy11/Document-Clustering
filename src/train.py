@@ -2,6 +2,7 @@ import argparse
 import time
 import mlflow
 import mlflow.sklearn
+import numpy as np
 
 import src.config as config
 from src.logger import get_logger
@@ -10,6 +11,7 @@ from src.preprocess import TextCleaner, LinguisticProcessor
 from src.features import TfidfLsaVectorizer, TransformerVectorizer
 from src.cluster import get_kmeans, get_gmm, get_hierarchical
 from src.evaluate import evaluate_clusters
+from src.visualize import get_2d_cluster_plot, get_dendrogram_plot
 
 logger = get_logger(__name__)
 
@@ -55,6 +57,17 @@ def run_pipeline(dataset_name: str, model_name: str, vectorizer_name: str):
             
         embeddings = vectorizer.fit_transform(processed_text)
 
+        logger.info("Checking for and dropping zero-vectors...")
+        magnitudes = np.linalg.norm(embeddings, axis=1)
+        non_zero_mask = magnitudes > 0
+        
+        dropped_count = len(magnitudes) - non_zero_mask.sum()
+        if dropped_count > 0:
+            logger.warning(f"Dropped {dropped_count} documents that vectorized to all zeros.")
+            
+        embeddings = embeddings[non_zero_mask]
+        df = df.iloc[non_zero_mask].reset_index(drop=True)
+
         model_kwargs = best_params.get(model_name, {})
         mlflow.log_params(model_kwargs)
         
@@ -76,6 +89,26 @@ def run_pipeline(dataset_name: str, model_name: str, vectorizer_name: str):
             mlflow.sklearn.log_model(vectorizer, "vectorizer")
         if model_name in ["kmeans", "gmm"]:
             mlflow.sklearn.log_model(model, "clustering_model")
+
+        logger.info("Generating visualizations...")
+        
+        if model_name in ["kmeans", "gmm"]:
+            fig_2d = get_2d_cluster_plot(
+                X_matrix=embeddings,
+                cluster_labels=labels,
+                original_texts=df['text'],
+                title=f"{dataset_name.title()}: 2D Semantic Cluster Map ({model_name.upper()})"
+            )
+            mlflow.log_figure(fig_2d, "visualizations/cluster_map_2d.html")
+            
+        elif model_name == "hierarchical":
+            fig_dendrogram = get_dendrogram_plot(
+                X_matrix=embeddings,
+                method=model_kwargs.get('linkage', 'ward'),
+                metric=model_kwargs.get('metric', 'euclidean'),
+                title=f"{dataset_name.title()}: Hierarchical Dendrogram"
+            )
+            mlflow.log_figure(fig_dendrogram, "visualizations/dendrogram.png")
 
         logger.info("=== Pipeline Completed ===")
 
