@@ -1,0 +1,122 @@
+{
+    "wikipedia_hierarchical_transformer": {
+        "keywords": {}
+    },
+    "wikipedia_gmm_transformer": {
+        "keywords": {}
+    },
+    "wikipedia_kmeans_transformer": {
+        "keywords": {}
+    },
+    "wikipedia_hierarchical_tfidf": {
+        "keywords": {}
+    },
+    "wikipedia_gmm_tfidf": {
+        "keywords": {
+            "Cluster 0": "play, club, season, football, league",
+            "Cluster 1": "law, court, university, serve, united",
+            "Cluster 2": "film, television, role, series, appear",
+            "Cluster 3": "team, football, win, year, play",
+            "Cluster 4": "church, serve, university, bishop, president",
+            "Cluster 5": "win, championship, tour, race, finish",
+            "Cluster 6": "art, work, museum, design, gallery",
+            "Cluster 7": "music, work, art, film, book",
+            "Cluster 8": "party, minister, election, member, elect",
+            "Cluster 9": "championship, olympic, world, win, medal",
+            "Cluster 10": "serve, district, state, senate, law",
+            "Cluster 11": "music, orchestra, symphony, jazz, conductor",
+            "Cluster 12": "film, book, work, novel, art",
+            "Cluster 13": "opera, theatre, film, role, music",
+            "Cluster 14": "book, university, poetry, publish, award",
+            "Cluster 15": "album, music, song, release, film",
+            "Cluster 16": "season, coach, play, team, game",
+            "Cluster 17": "league, baseball, game, season, major",
+            "Cluster 18": "university, research, science, professor, institute",
+            "Cluster 19": "album, band, release, music, record"
+        }
+    },
+    "wikipedia_kmeans_tfidf": {
+        "keywords": {
+            "Cluster 0": "coach, head, team, season, basketball",
+            "Cluster 1": "university, research, professor, science, study",
+            "Cluster 2": "music, orchestra, opera, symphony, conductor",
+            "Cluster 3": "championship, win, race, world, olympic",
+            "Cluster 4": "album, band, release, music, record",
+            "Cluster 5": "football, play, season, game, australian",
+            "Cluster 6": "law, court, judge, university, justice",
+            "Cluster 7": "serve, president, state, member, committee",
+            "Cluster 8": "party, election, minister, elect, member",
+            "Cluster 9": "league, baseball, game, season, major",
+            "Cluster 10": "book, publish, novel, write, poetry",
+            "Cluster 11": "film, festival, award, direct, documentary",
+            "Cluster 12": "work, year, new, company, book",
+            "Cluster 13": "rugby, play, cup, match, zealand",
+            "Cluster 14": "tour, pga, golf, finish, win",
+            "Cluster 15": "radio, news, host, television, bbc",
+            "Cluster 16": "club, league, season, play, football",
+            "Cluster 17": "season, hockey, play, game, basketball",
+            "Cluster 18": "art, museum, work, gallery, artist",
+            "Cluster 19": "theatre, role, film, play, series"
+        }
+    },
+    "newsgroups_hierarchical_transformer": {
+        "keywords": {}
+    },
+    "newsgroups_gmm_transformer": {
+        "keywords": {}
+    },
+    "newsgroups_kmeans_transformer": {
+        "keywords": {}
+    },
+    "newsgroups_hierarchical_tfidf": {
+        "keywords": {}
+    },
+    "newsgroups_gmm_tfidf": {
+        "keywords": {
+            "Cluster 0": "thank, advance, email, know, hi",
+            "Cluster 1": "post, article, read, group, newsgroup",
+            "Cluster 2": "god, believe, jesus, sin, bible",
+            "Cluster 3": "team, player, year, win, play",
+            "Cluster 4": "know, think, like, good, time",
+            "Cluster 5": "bike, ride, dod, motorcycle, buy",
+            "Cluster 6": "file, format, window, directory, program",
+            "Cluster 7": "drive, scsi, disk, hard, mb",
+            "Cluster 8": "armenian, turkish, people, muslim, armenians",
+            "Cluster 9": "key, chip, encryption, clipper, government",
+            "Cluster 10": "gun, law, people, crime, time",
+            "Cluster 11": "game, espn, play, baseball, win",
+            "Cluster 12": "mhz, chip, dx, mb, scsi",
+            "Cluster 13": "printer, port, modem, serial, font",
+            "Cluster 14": "god, israel, christian, jews, jesus",
+            "Cluster 15": "njxp, gebcadredslpittedu, bank, chastity, skepticism",
+            "Cluster 16": "window, run, do, program, application",
+            "Cluster 17": "card, driver, video, monitor, color",
+            "Cluster 18": "car, engine, drive, buy, good",
+            "Cluster 19": "fire, fbi, gun, child, koresh"
+        }
+    },
+    "newsgroups_kmeans_tfidf": {
+        "keywords": {
+            "Cluster 0": "file, format, window, program, directory",
+            "Cluster 1": "sale, sell, price, offer, email",
+            "Cluster 2": "gun, fire, law, people, fbi",
+            "Cluster 3": "god, jesus, believe, christian, sin",
+            "Cluster 4": "drive, scsi, disk, hard, ide",
+            "Cluster 5": "people, think, say, know, christian",
+            "Cluster 6": "post, list, article, read, group",
+            "Cluster 7": "njxp, gebcadredslpittedu, bank, chastity, skepticism",
+            "Cluster 8": "team, player, year, play, win",
+            "Cluster 9": "know, like, think, time, get",
+            "Cluster 10": "chip, key, government, clipper, encryption",
+            "Cluster 11": "key, chip, bit, encryption, clipper",
+            "Cluster 12": "window, run, do, program, application",
+            "Cluster 13": "israel, armenian, arab, jews, israeli",
+            "Cluster 14": "use, problem, run, work, program",
+            "Cluster 15": "card, driver, video, monitor, color",
+            "Cluster 16": "thank, email, advance, know, hi",
+            "Cluster 17": "game, espn, play, baseball, win",
+            "Cluster 18": "bike, ride, dod, motorcycle, buy",
+            "Cluster 19": "car, engine, drive, buy, good"
+        }
+    }
+}
